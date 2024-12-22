@@ -1,0 +1,27 @@
+{
+  "name": "faltometro",
+  "version": "1.0.0",
+  "description": "O Faltômetro é uma aplicação prática para estudantes gerenciarem suas faltas nas aulas. Com ele você pode controlar suas faltas e evitar uma reprovação, crie seu perfil e garanta a aprovação na matéria mais difícil, a presença.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-node src/server.ts",
+    "start": "dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
