@@ -7,7 +7,7 @@ export class Absence {
     absence_id!: number;
 
     @Column()
-    justification !: string;
+    justification !: Text;
 
     @ManyToOne(() => Course, course => course.absences)
     @JoinColumn({ name: "course_id" })
