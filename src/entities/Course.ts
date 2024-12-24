@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToMany } from "typeorm";
 import { User } from "./User"
+import { Absence } from "./Absence"
 
 @Entity()
 export class Course {
@@ -36,4 +37,7 @@ export class Course {
 
 	@Column()
 	course_end_date!: Date;
+
+	@OneToMany(() => Absence, (absence) => absence.course)
+	absences!: Absence[];
 }
