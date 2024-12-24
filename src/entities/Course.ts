@@ -29,8 +29,8 @@ export class Course {
 	@Column({ type: "float" })
 	max_absences_percentage!: number;
 
-	@Column()
-	class_days!: Text;
+	@Column({ type: "int" })
+	class_days!: number;
 
 	@Column()
 	course_start_date!: Date;
