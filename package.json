@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "test": "ts-node src/server.ts",
-    "start": "dist/index.js",
+    "start": "dist/server.js",
     "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default",
     "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
   },

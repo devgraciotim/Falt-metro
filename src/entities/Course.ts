@@ -1,6 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToMany } from "typeorm";
-import { User } from "./User"
-import { Absence } from "./Absence"
+import {
+	Entity,
+	PrimaryGeneratedColumn,
+	Column,
+	ManyToOne,
+	JoinColumn,
+	OneToMany,
+} from "typeorm";
+import { User } from "./User";
+import { Absence } from "./Absence";
+import { DaysOfWeek } from "../enums/DaysOfWeek";
 
 @Entity()
 export class Course {
@@ -10,7 +18,7 @@ export class Course {
 	@Column()
 	course_name!: string;
 
-	@ManyToOne(() => User, user => user.courses)
+	@ManyToOne(() => User, (user) => user.courses)
 	@JoinColumn({ name: "user_id" })
 	user!: User;
 
@@ -29,8 +37,12 @@ export class Course {
 	@Column({ type: "float" })
 	max_absences_percentage!: number;
 
-	@Column({ type: "int" })
-	class_days!: number;
+	@Column({
+		type: "enum",
+		enum: DaysOfWeek,
+		array: true
+	})
+	class_days!: DaysOfWeek[];
 
 	@Column()
 	course_start_date!: Date;
