@@ -16,7 +16,7 @@ export class User {
 	email!: string;
 
 	@Column()
-	instituicion!: string;
+	institution!: string;
 
 	@Column({ type: "bytea" })
 	photo!: Buffer;
